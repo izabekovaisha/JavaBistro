@@ -1,8 +1,8 @@
 package com.pluralsight.menu;
 
 public class Chips extends MenuItem {
-    public Chips(String name, double price) {
-        super(name, price);
+    public Chips() {
+        super("Chips", 1.50);
     }
 
     @Override
