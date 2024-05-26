@@ -3,10 +3,10 @@ package com.pluralsight.menu;
 public class Drink extends MenuItem {
     private String size;
 
-    public Drink(String size) {
+    public Drink(String name, double price, String size) {
+        super(name, price);
         this.size = size;
     }
-
 
     public String getSize() {
         return size;
@@ -17,7 +17,7 @@ public class Drink extends MenuItem {
     }
 
     @Override
-    public double getPrice() {
-        return 0;
+    public double calculatePrice() {
+        return getPrice();
     }
 }

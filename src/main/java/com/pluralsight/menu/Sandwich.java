@@ -49,9 +49,25 @@ public class Sandwich {
         this.toasted = toasted;
     }
 
-    public void addTopping(Topping toppings) {}
+    public void addTopping(Topping topping) {
+        toppings.add(topping);
+    }
 
     public double calculateCost() {
-        return 0;
+        double totalCost = 0;
+
+        switch (size) {
+            case 4:
+                totalCost += 5.50;
+            case 8:
+                totalCost += 7.00;
+            case 12:
+                totalCost += 8.50;
+                break;
+        }
+        for (Topping topping : toppings) {
+            totalCost += topping.getCost(size);
+        }
+        return totalCost;
     }
 }
