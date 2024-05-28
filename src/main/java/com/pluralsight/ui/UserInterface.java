@@ -15,6 +15,10 @@ public class UserInterface {
             int choice = scanner.nextInt();
 
             switch (choice) {
+                case 1:
+
+                    break;
+                case 2:
 
             }
         }

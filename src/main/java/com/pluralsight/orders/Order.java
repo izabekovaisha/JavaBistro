@@ -64,7 +64,17 @@ public class Order {
     }
 
     public double calculateDoubleCost() {
-        return 0;
+        double totalCost = 0.0;
+        for (Sandwich sandwich : sandwiches) {
+            totalCost += sandwich.calculateCost();
+        }
+        for (Drink drink : drinks) {
+            totalCost += drink.calculatePrice();
+        }
+        for (Chips chip : chips) {
+            totalCost += chip.calculatePrice();
+        }
+        return totalCost;
     }
 
     public void displayCustomerInfo() {
