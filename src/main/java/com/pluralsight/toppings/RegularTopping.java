@@ -14,6 +14,6 @@ public class RegularTopping implements Topping {
 
     @Override
     public double getCost(int sandwichSize) {
-        return 0;
+        return 0.0;
     }
 }

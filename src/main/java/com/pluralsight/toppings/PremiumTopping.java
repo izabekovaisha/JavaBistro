@@ -16,6 +16,12 @@ public class PremiumTopping implements Topping {
 
     @Override
     public double getCost(int sandwichSize) {
-        return 0;
+        double premiumToppingPrice;
+        switch (sandwichSize) {
+            case 4:
+                premiumToppingPrice = price;
+            case 8:
+                premiumToppingPrice = price * 2;
+        }
     }
 }
