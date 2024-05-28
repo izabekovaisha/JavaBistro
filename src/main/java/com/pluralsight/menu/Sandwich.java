@@ -2,6 +2,7 @@ package com.pluralsight.menu;
 
 import com.pluralsight.toppings.Topping;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Sandwich {
@@ -13,8 +14,8 @@ public class Sandwich {
     public Sandwich(int size, String bread, List<Topping> toppings, boolean toasted) {
         this.size = size;
         this.bread = bread;
-        this.toppings = toppings;
         this.toasted = toasted;
+        this.toppings = new ArrayList<>();
     }
 
     public int getSize() {
@@ -54,20 +55,35 @@ public class Sandwich {
     }
 
     public double calculateCost() {
-        double totalCost = 0;
+        double basePrice = 0;
 
         switch (size) {
             case 4:
-                totalCost += 5.50;
+                basePrice = 5.50;
+                break;
             case 8:
-                totalCost += 7.00;
+                basePrice = 7.00;
+                break;
             case 12:
-                totalCost += 8.50;
+                basePrice = 8.50;
                 break;
         }
+        double toppingsPrice = 0;
         for (Topping topping : toppings) {
-            totalCost += topping.getCost(size);
+            toppingsPrice += topping.getCost(size);
         }
-        return totalCost;
+        return basePrice + toppingsPrice;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(size).append("\" sandwich on").append(bread).append(" bread, toasted: ").append(toasted ? "Yes" : "No").append("\nToppings:\n");
+
+        for (Topping topping : toppings) {
+            sb.append(" ").append(topping.getName()).append(" - $").append(topping.getCost(size)).append("\n");
+        }
+        sb.append("Total cost: $").append(calculateCost());
+        return sb.toString();
     }
 }

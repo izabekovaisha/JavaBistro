@@ -6,7 +6,7 @@ public class Drink extends MenuItem {
     private String size;
 
     public Drink(String name, double price, String size) {
-        super(name, price);
+        super("Drink", 0);
         this.size = size;
     }
 
@@ -28,7 +28,12 @@ public class Drink extends MenuItem {
             case "large":
                 return 3.00;
             default:
-                return getPrice();
+                return 0;
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Drink:\n " + size + " - $" + calculatePrice();
     }
 }

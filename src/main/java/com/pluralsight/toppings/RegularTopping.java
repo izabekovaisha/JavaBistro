@@ -2,17 +2,14 @@ package com.pluralsight.toppings;
 
 public class RegularTopping implements Topping {
     private String name;
-    private double price;
 
-    public RegularTopping(String name, double price) {
+    public RegularTopping(String name) {
         this.name = name;
-        this.price = price;
     }
-
 
     @Override
     public String getName() {
-        return "";
+        return name;
     }
 
     @Override

@@ -9,4 +9,9 @@ public class Chips extends MenuItem {
     public double calculatePrice() {
         return getPrice();
     }
+
+    @Override
+    public String toString() {
+        return "Chips:\n" + "small - $" + calculatePrice();
+    }
 }

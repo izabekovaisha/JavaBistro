@@ -11,7 +11,7 @@ public class PremiumTopping implements Topping {
 
     @Override
     public String getName() {
-        return "";
+        return name;
     }
 
     @Override
