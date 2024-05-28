@@ -3,6 +3,7 @@ package com.pluralsight.orders;
 import com.pluralsight.menu.Chips;
 import com.pluralsight.menu.Drink;
 import com.pluralsight.menu.Sandwich;
+import com.pluralsight.services.Receipt;
 
 import java.util.List;
 
@@ -51,19 +52,19 @@ public class Order {
         this.chips = chips;
     }
 
-    public void addSandwich(Sandwich sandwiches) {
-
+    public void addSandwich(Sandwich sandwich) {
+        sandwiches.add(sandwich);
     }
 
-    public void addDrink(Drink drinks) {
-
+    public void addDrink(Drink drink) {
+        drinks.add(drink);
     }
 
-    public void addChips(Chips chips) {
-
+    public void addChips(Chips chip) {
+        chips.add(chip);
     }
 
-    public double calculateDoubleCost() {
+    public double calculateCost() {
         double totalCost = 0.0;
         for (Sandwich sandwich : sandwiches) {
             totalCost += sandwich.calculateCost();
@@ -78,19 +79,35 @@ public class Order {
     }
 
     public void displayCustomerInfo() {
-
+        System.out.println("Customer information: ");
+        System.out.println("Name: " + customer.getFullName());
     }
 
     public void displayOrderDetails() {
-
+        System.out.println("Order details: ");
+        System.out.println("Sandwiches:");
+        for (Sandwich sandwich : sandwiches) {
+            System.out.println(sandwich);
+        }
+        System.out.println("Drinks:");
+        for (Drink drink : drinks) {
+            System.out.println(drink);
+        }
+        System.out.println("Chips:");
+        for (Chips chip : chips) {
+            System.out.println(chip);
+        }
+        System.out.println("Total cost: $" + calculateCost());
     }
 
     public void saveReceipt() {
-
+        Order order = new Order(customer, sandwiches, drinks, chips);
+        Receipt receipt = new Receipt();
+        receipt.generateReceipt(order);
     }
 
     public void placeOrder() {
-
+        System.out.println("Your order has been successfully placed!");
     }
 
 }
