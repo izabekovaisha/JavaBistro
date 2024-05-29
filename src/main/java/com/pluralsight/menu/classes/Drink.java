@@ -3,11 +3,21 @@ package com.pluralsight.menu.classes;
 import com.pluralsight.menu.abstractclasses.MenuItem;
 
 public class Drink extends MenuItem {
+    private String flavor;
     private String size;
 
-    public Drink(String name, double price, String size) {
+    public Drink(String name, String flavor) {
         super("Drink", 0);
+        this.flavor = flavor;
         this.size = size;
+    }
+
+    public String getFlavor() {
+        return flavor;
+    }
+
+    public void setFlavor(String flavor) {
+        this.flavor = flavor;
     }
 
     public String getSize() {
@@ -34,6 +44,6 @@ public class Drink extends MenuItem {
 
     @Override
     public String toString() {
-        return "Drink:\n " + size + " - $" + calculatePrice();
+        return size + " " + " - $" + calculatePrice();
     }
 }

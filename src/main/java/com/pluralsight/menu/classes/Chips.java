@@ -3,8 +3,19 @@ package com.pluralsight.menu.classes;
 import com.pluralsight.menu.abstractclasses.MenuItem;
 
 public class Chips extends MenuItem {
-    public Chips() {
-        super("Chips", 1.50);
+        private String type;
+
+    public Chips(String name, double price) {
+        super("Chips", price);
+        this.type = type;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     @Override
@@ -14,6 +25,7 @@ public class Chips extends MenuItem {
 
     @Override
     public String toString() {
-        return "Chips:\n" + "small - $" + calculatePrice();
+        return type + " - $" + calculatePrice();
     }
 }
+
