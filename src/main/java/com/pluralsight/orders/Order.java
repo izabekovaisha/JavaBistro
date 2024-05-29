@@ -108,4 +108,22 @@ public class Order {
         System.out.println("Your order has been successfully placed!");
     }
 
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("Order details:\n");
+        builder.append("Customer: ").append(customer.getFirstName()).append(" ").append(customer.getLastName()).append("\n");
+        builder.append("Items:\n");
+        for (Sandwich sandwich : sandwiches) {
+            builder.append("- ").append(sandwich).append("\n");
+        }
+        for (Drink drink : drinks) {
+            builder.append("- ").append(drink).append("\n");
+        }
+        for (Chips chip : chips) {
+            builder.append("- ").append(chip).append("\n");
+        }
+        builder.append("Total: ").append(calculateCost()).append("\n");
+        return builder.toString();
+    }
 }

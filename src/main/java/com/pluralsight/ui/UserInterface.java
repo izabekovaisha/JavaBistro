@@ -98,25 +98,38 @@ public class UserInterface {
         System.out.println("Add sandwich:");
 
         System.out.println("Select type of bread:");
-        for (int i = 0; i < Sandwich.BREAD_TYPES.size(); i++) {
-            System.out.println((i + 1) + ") " + Sandwich.BREAD_TYPES.get(i));
+        for (String breadType : Sandwich.BREAD_TYPES) {
+            System.out.println("> " + breadType);
         }
         System.out.println("Choose an option: ");
-        String bread = Sandwich.BREAD_TYPES.get(scanner.nextInt() - 1);
-        scanner.nextLine();
+        String bread = scanner.nextLine();
+
+        if (!Sandwich.BREAD_TYPES.contains(bread)) {
+            System.out.println("Invalid choice. Please try again.");
+            return;
+        }
 
         System.out.println("Enter sandwich size (4/8/12 inches)");
         int size = scanner.nextInt();
         scanner.nextLine();
 
+        System.out.println("Toppings:");
         List<Topping> toppings = new ArrayList<>();
         toppings.addAll(selectToppings("meat", PremiumTopping.MEATS));
+
+        System.out.println("Would you like extra meat? (yes/no)");
+        boolean extraMeat = scanner.nextLine().equalsIgnoreCase("yes");
+
         toppings.addAll(selectToppings("cheese", PremiumTopping.CHEESES));
+
+        System.out.println("Would you like extra cheese? (yes/no)");
+        boolean extraCheese = scanner.nextLine().equalsIgnoreCase("yes");
+
         toppings.addAll(selectToppings("regular", RegularTopping.REGULAR_TOPPINGS));
         toppings.addAll(selectToppings("sauce", RegularTopping.SAUCES));
         toppings.addAll(selectToppings("sides", RegularTopping.SIDES));
 
-        System.out.println("Would you like your sandwich toasted (yes/no)? ");
+        System.out.println("Would you like your sandwich toasted? (yes/no)");
         boolean toasted = scanner.nextLine().equalsIgnoreCase("yes");
 
         Sandwich sandwich = new Sandwich(size, bread, toppings, toasted);
@@ -127,11 +140,10 @@ public class UserInterface {
     private List<Topping> selectToppings(String category, List<String> availableToppings) {
         List<Topping> selectedToppings = new ArrayList<>();
 
-        System.out.println("Select " + category + "toppings: ");
+        System.out.println("Select " + category + " toppings: ");
         for (String topping : availableToppings) {
-            System.out.println(topping + ", ");
+            System.out.println("> " + topping);
         }
-        System.out.println();
 
         String input = scanner.nextLine();
         String[] toppingsNames = input.split(",");
@@ -196,7 +208,7 @@ public class UserInterface {
         }
         Drink drink = new Drink(drinkFlavor, drinkSize);
         currentOrder.addDrink(drink);
-        System.out.println(drinkSize + " " + drinkFlavor + "drink added to your order.");
+        System.out.println(drinkSize + " " + drinkFlavor + " drink added to your order.");
     }
 
     private void addChips() {
@@ -226,12 +238,12 @@ public class UserInterface {
         }
         Chips chips = new Chips(chipsType, 1.50);
         currentOrder.addChips(chips);
-        System.out.println(chipsType + "chips added to your order.");
+        System.out.println(chipsType + " chips added to your order.");
     }
 
     private void checkout() {
         System.out.println("Checkout:");
-        System.out.println(currentOrder);
+        currentOrder.displayOrderDetails();
         System.out.println("Confirm order? (yes/no)");
         if (scanner.nextLine().equalsIgnoreCase("yes")) {
             System.out.println("Order confirmed.");
