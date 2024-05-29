@@ -1,4 +1,6 @@
-package com.pluralsight.toppings;
+package com.pluralsight.toppings.classes;
+
+import com.pluralsight.toppings.interfaces.Topping;
 
 import java.util.List;
 import java.util.Arrays;
@@ -10,8 +12,8 @@ public class PremiumTopping implements Topping {
     private boolean extraMeat;
     private boolean extraCheese;
 
-    private List<String> MEATS = Arrays.asList("steak", "ham", "salami", "roast beef", "chicken", "bacon");
-    private List<String> CHEESES = Arrays.asList("american", "provolone", "cheddar", "swiss");
+    public static List<String> MEATS = Arrays.asList("steak", "ham", "salami", "roast beef", "chicken", "bacon");
+    public static List<String> CHEESES = Arrays.asList("american", "provolone", "cheddar", "swiss");
 
     public PremiumTopping(String name) {
         this.name = name;
@@ -23,11 +25,11 @@ public class PremiumTopping implements Topping {
     }
 
     public boolean isMeat() {
-        return isMeat;
+        return MEATS.contains(name);
     }
 
     public boolean isCheese() {
-        return isCheese;
+        return CHEESES.contains(name);
     }
 
     @Override

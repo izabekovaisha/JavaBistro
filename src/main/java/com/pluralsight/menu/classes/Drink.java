@@ -1,6 +1,6 @@
-package com.pluralsight.menu;
+package com.pluralsight.menu.classes;
 
-import com.pluralsight.toppings.Topping;
+import com.pluralsight.menu.abstractclasses.MenuItem;
 
 public class Drink extends MenuItem {
     private String size;

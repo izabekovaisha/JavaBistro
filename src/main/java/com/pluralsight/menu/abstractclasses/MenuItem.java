@@ -1,4 +1,4 @@
-package com.pluralsight.menu;
+package com.pluralsight.menu.abstractclasses;
 
 public abstract class MenuItem {
     private String name;

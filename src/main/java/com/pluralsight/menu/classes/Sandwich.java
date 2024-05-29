@@ -1,8 +1,9 @@
-package com.pluralsight.menu;
+package com.pluralsight.menu.classes;
 
-import com.pluralsight.toppings.Topping;
+import com.pluralsight.toppings.interfaces.Topping;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Sandwich {
@@ -10,6 +11,8 @@ public class Sandwich {
     private String bread;
     private List<Topping> toppings;
     private boolean toasted;
+
+    public static List<String> BREAD_TYPES = Arrays.asList("white", "wheat", "rye", "wrap");
 
     public Sandwich(int size, String bread, List<Topping> toppings, boolean toasted) {
         this.size = size;

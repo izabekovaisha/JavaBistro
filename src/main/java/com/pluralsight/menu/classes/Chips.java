@@ -1,4 +1,6 @@
-package com.pluralsight.menu;
+package com.pluralsight.menu.classes;
+
+import com.pluralsight.menu.abstractclasses.MenuItem;
 
 public class Chips extends MenuItem {
     public Chips() {

@@ -1,8 +1,8 @@
 package com.pluralsight.orders;
 
-import com.pluralsight.menu.Chips;
-import com.pluralsight.menu.Drink;
-import com.pluralsight.menu.Sandwich;
+import com.pluralsight.menu.classes.Chips;
+import com.pluralsight.menu.classes.Drink;
+import com.pluralsight.menu.classes.Sandwich;
 import com.pluralsight.services.Receipt;
 
 import java.util.List;
@@ -78,12 +78,10 @@ public class Order {
         return totalCost;
     }
 
-    public void displayCustomerInfo() {
+    public void displayOrderDetails() {
         System.out.println("Customer information: ");
         System.out.println("Name: " + customer.getFullName());
-    }
 
-    public void displayOrderDetails() {
         System.out.println("Order details: ");
         System.out.println("Sandwiches:");
         for (Sandwich sandwich : sandwiches) {

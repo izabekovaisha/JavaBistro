@@ -1,5 +1,8 @@
 package com.pluralsight.toppings;
 
+import com.pluralsight.toppings.classes.PremiumTopping;
+import com.pluralsight.toppings.classes.RegularTopping;
+import com.pluralsight.toppings.interfaces.Topping;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

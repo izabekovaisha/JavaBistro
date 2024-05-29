@@ -1,4 +1,4 @@
-package com.pluralsight.toppings;
+package com.pluralsight.toppings.interfaces;
 
 public interface Topping {
     String getName();
