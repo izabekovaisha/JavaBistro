@@ -122,7 +122,36 @@ public class UserInterface {
     }
 
     private void addDrink() {
-        System.out.println("");
+        System.out.println("Add drink:");
+        System.out.println("Select drink size:");
+        System.out.println("1) Small");
+        System.out.println("2) Medium");
+        System.out.println("3) Large");
+        System.out.println("Choose an option: ");
+        int drinkSizeOption = scanner.nextInt();
+        scanner.nextLine();
+
+        String drinkize;
+        switch (drinkSizeOption) {
+            case 1:
+                drinkize = "Small";
+                break;
+            case 2:
+                drinkize = "Medium";
+                break;
+            case 3:
+                drinkize = "Large";
+                break;
+            default:
+                System.out.println("Invalid option. Please choose again.");
+        }
+        System.out.println("Select drink flavor:");
+        System.out.println("1) Papaya green tea");
+        System.out.println("2) Agava lemonade");
+        System.out.println("3) Unsweetened iced tea");
+        System.out.println("Choose an option: ");
+        int drinkFlavorOption = scanner.nextInt();
+        scanner.nextLine();
     }
 
     private void addChips() {
