@@ -5,8 +5,8 @@ import com.pluralsight.menu.abstractclasses.MenuItem;
 public class Chips extends MenuItem {
         private String type;
 
-    public Chips(String name, double price) {
-        super("Chips", price);
+    public Chips(String type, double price) {
+        super(type, price);
         this.type = type;
     }
 

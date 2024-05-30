@@ -63,7 +63,7 @@ public class UserInterface {
             System.out.println("Order screen:");
             System.out.println("1) Add sandwich");
             System.out.println("2) Add drink");
-            System.out.println("3) Add Chips");
+            System.out.println("3) Add chips");
             System.out.println("4) Checkout");
             System.out.println("0) Cancel order");
             System.out.println("Please select an option: ");
@@ -109,7 +109,7 @@ public class UserInterface {
             return;
         }
 
-        System.out.println("Enter sandwich size (4/8/12 inches)");
+        System.out.println("Enter sandwich size (4/8/12 inches):");
         int size = scanner.nextInt();
         scanner.nextLine();
 
@@ -162,9 +162,9 @@ public class UserInterface {
     private void addDrink() {
         System.out.println("Add drink:");
         System.out.println("Select drink size:");
-        System.out.println("1) Small");
-        System.out.println("2) Medium");
-        System.out.println("3) Large");
+        System.out.println("1) small");
+        System.out.println("2) medium");
+        System.out.println("3) large");
         System.out.println("Choose an option: ");
         int drinkSizeOption = scanner.nextInt();
         scanner.nextLine();
@@ -184,9 +184,9 @@ public class UserInterface {
                 System.out.println("Invalid option. Please choose again.");
         }
         System.out.println("Select drink flavor:");
-        System.out.println("1) Papaya green tea");
-        System.out.println("2) Agave lemonade");
-        System.out.println("3) Unsweetened iced tea");
+        System.out.println("1) papaya green tea");
+        System.out.println("2) agave lemonade");
+        System.out.println("3) unsweetened iced tea");
         System.out.println("Choose an option: ");
         int drinkFlavorOption = scanner.nextInt();
         scanner.nextLine();
@@ -194,13 +194,13 @@ public class UserInterface {
         String drinkFlavor = "";
         switch (drinkFlavorOption) {
             case 1:
-                drinkFlavor = "Papaya green tea";
+                drinkFlavor = "papaya green tea";
                 break;
             case 2:
-                drinkFlavor = "Agave lemonade";
+                drinkFlavor = "agave lemonade";
                 break;
             case 3:
-                drinkFlavor = "Unsweetened iced tea";
+                drinkFlavor = "unsweetened iced tea";
                 break;
             default:
                 System.out.println("Invalid option. Please choose again.");
@@ -214,9 +214,9 @@ public class UserInterface {
     private void addChips() {
         System.out.println("Add chips:");
         System.out.println("Select chip size:");
-        System.out.println("1) Sour cream & onion");
-        System.out.println("2) Barbecue");
-        System.out.println("3) Cheddar cheese");
+        System.out.println("1) sour cream & onion");
+        System.out.println("2) barbecue");
+        System.out.println("3) cheddar cheese");
         System.out.println("Choose an option: ");
         int chipsTypeOption = scanner.nextInt();
         scanner.nextLine();

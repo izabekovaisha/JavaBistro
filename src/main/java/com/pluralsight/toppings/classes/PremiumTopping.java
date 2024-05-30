@@ -32,6 +32,22 @@ public class PremiumTopping implements Topping {
         return CHEESES.contains(name);
     }
 
+    public boolean isExtraMeat() {
+        return extraMeat;
+    }
+
+    public void setExtraMeat(boolean extraMeat) {
+        this.extraMeat = extraMeat;
+    }
+
+    public boolean isExtraCheese() {
+        return extraCheese;
+    }
+
+    public void setExtraCheese(boolean extraCheese) {
+        this.extraCheese = extraCheese;
+    }
+
     @Override
     public double getCost(int sandwichSize) {
         double price = 0.0;

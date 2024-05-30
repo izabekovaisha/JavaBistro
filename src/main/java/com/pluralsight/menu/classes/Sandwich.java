@@ -1,5 +1,7 @@
 package com.pluralsight.menu.classes;
 
+import com.pluralsight.toppings.classes.PremiumTopping;
+import com.pluralsight.toppings.classes.RegularTopping;
 import com.pluralsight.toppings.interfaces.Topping;
 
 import java.util.ArrayList;
@@ -18,7 +20,7 @@ public class Sandwich {
         this.size = size;
         this.bread = bread;
         this.toasted = toasted;
-        this.toppings = new ArrayList<>();
+        this.toppings = new ArrayList<>(toppings);
     }
 
     public int getSize() {
@@ -81,12 +83,24 @@ public class Sandwich {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(size).append("\" sandwich on").append(bread).append(" bread, toasted: ").append(toasted ? "Yes" : "No").append("\nToppings:\n");
-
-        for (Topping topping : toppings) {
-            sb.append(" ").append(topping.getName()).append(" - $").append(topping.getCost(size)).append("\n");
+        sb.append("Size: ").append(size).append("\n");
+        sb.append("Bread: ").append(bread).append("\n");
+        sb.append("Toasted: ").append(toasted ? "Yes" : "No").append("\n");
+        sb.append("Toppings: ");
+        if (toppings.isEmpty()) {
+            sb.append("None");
+        } else {
+            for (Topping topping : toppings) {
+                sb.append(topping.getName()).append(" - $").append(topping.getCost(size));
+                if (topping instanceof PremiumTopping) {
+                    PremiumTopping premiumTopping = (PremiumTopping) topping;
+                    sb.append(" | Extra meat: ").append(premiumTopping.isExtraMeat() ? "Yes" : "No");
+                    sb.append(" | Extra cheese: ").append(premiumTopping.isExtraCheese() ? "Yes" : "No");
+                }
+                sb.append(" | ");
+            }
         }
-        sb.append("Total cost: $").append(calculateCost());
+        sb.append("\nPrice: $").append(calculateCost());
         return sb.toString();
     }
 }

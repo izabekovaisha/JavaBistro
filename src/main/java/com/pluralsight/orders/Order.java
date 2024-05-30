@@ -66,15 +66,15 @@ public class Order {
 
     public double calculateCost() {
         double totalCost = 0.0;
-        for (Sandwich sandwich : sandwiches) {
-            totalCost += sandwich.calculateCost();
+            for (Sandwich sandwich : sandwiches) {
+                totalCost += sandwich.calculateCost();
         }
-        for (Drink drink : drinks) {
-            totalCost += drink.calculatePrice();
+            for (Drink drink : drinks) {
+                totalCost += drink.calculatePrice();
         }
-        for (Chips chip : chips) {
-            totalCost += chip.calculatePrice();
-        }
+            for (Chips chip : chips) {
+                totalCost += chip.calculatePrice();
+            }
         return totalCost;
     }
 
@@ -83,17 +83,26 @@ public class Order {
         System.out.println("Name: " + customer.getFullName());
 
         System.out.println("Order details: ");
-        System.out.println("Sandwiches:");
-        for (Sandwich sandwich : sandwiches) {
-            System.out.println(sandwich);
+
+        if (!sandwiches.isEmpty()) {
+            System.out.println("Sandwiches: ");
+            for (Sandwich sandwich : sandwiches) {
+                System.out.println(sandwich);
+            }
         }
-        System.out.println("Drinks:");
-        for (Drink drink : drinks) {
-            System.out.println(drink);
+
+        if (!drinks.isEmpty()) {
+            System.out.println("Drinks: ");
+            for (Drink drink : drinks) {
+                System.out.println(drink);
+            }
         }
-        System.out.println("Chips:");
-        for (Chips chip : chips) {
-            System.out.println(chip);
+
+        if (!chips.isEmpty()) {
+            System.out.println("Chips: ");
+            for (Chips chip : chips) {
+                System.out.println(chip);
+            }
         }
         System.out.println("Total cost: $" + calculateCost());
     }
@@ -106,24 +115,5 @@ public class Order {
 
     public void placeOrder() {
         System.out.println("Your order has been successfully placed!");
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder builder = new StringBuilder();
-        builder.append("Order details:\n");
-        builder.append("Customer: ").append(customer.getFirstName()).append(" ").append(customer.getLastName()).append("\n");
-        builder.append("Items:\n");
-        for (Sandwich sandwich : sandwiches) {
-            builder.append("- ").append(sandwich).append("\n");
-        }
-        for (Drink drink : drinks) {
-            builder.append("- ").append(drink).append("\n");
-        }
-        for (Chips chip : chips) {
-            builder.append("- ").append(chip).append("\n");
-        }
-        builder.append("Total: ").append(calculateCost()).append("\n");
-        return builder.toString();
     }
 }
