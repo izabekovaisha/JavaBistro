@@ -1,15 +1,17 @@
-# Car Dealership Application
+# Java Bistro Application
 
-## Car Dealership is a comprehensive console-based tool tailored for dealership managers and sales personnel to efficiently manage vehicle inventory, sales, and leasing operations. This application offers an intuitive interface for performing various tasks related to inventory management, customer interactions, and financial transactions.
+## Java Bistro is a software tool designed to help café owners streamline their operations and enhance customer experience. It provides a virtual platform where café owners can manage various aspects of their café, from menu updates to customer interactions, all in one place.
+
 
 ## Features
+Java Bistro offers a range of features tailored to meet the needs of café owners:
 
-The Car Dealership Application offers a range of functionalities to streamline dealership operations:
+- **Menu Management**: Easily update and customize the café menu by adding new items, adjusting prices, and modifying descriptions.
+- **Order Taking**: Seamlessly manage customer orders, ensuring accuracy and efficiency in food preparation and delivery.
+- **Customer Interaction**: Engage with customers through virtual interactions, taking their orders, and addressing any inquiries or concerns they may have.
+- **Staff Management**: Efficiently assign tasks to café staff, monitor their performance, and ensure smooth operations during peak hours.
+- **User-Friendly Interface**: Java Bistro provides an intuitive and user-friendly interface, making it easy for café owners to navigate and utilize its functionalities effectively.
 
-* **Inventory Management**: Easily search, add, remove, and update vehicles in the inventory based on criteria such as price, make, model, year, color, mileage, and type.
-* **Admin Interface**: Secure access to administrative features such as viewing all contracts, searching contracts by customer name, and managing dealership operations.
-* **Sales and Lease Options**: Conduct vehicle sales and lease transactions with built-in functionalities for calculating taxes, fees, total prices, and monthly payments.
-* **User-friendly Interface**: Intuitive console-based interface for seamless navigation and interaction, ensuring ease of use for dealership staff.
 
 ## Prerequisites
 
@@ -34,20 +36,19 @@ Follow these steps to run the Car Dealership Application:
 - [GitHub](https://github.com/izabekovaisha/FinancialTracker)
 - [Git Bash](https://gitforwindows.org)
 
-## User Interface Demo
+## Demo
 
-![Recording2024-05-22211740-ezgif com-optimize](https://github.com/izabekovaisha/adv-dealership-project/assets/166551874/1f4c2798-be5a-475d-af5b-67f875a5a260)
 
-## Admin Interface Demo
-
-![Recording2024-05-22203241-ezgif com-optimize](https://github.com/izabekovaisha/adv-dealership-project/assets/166551874/ab3789a3-5f18-4559-ba1d-b711089e0a91)
 
 ## Future Work
 
-* **Integration with Online Marketplace**: Expand the dealership's reach by integrating with popular online marketplaces for vehicle sales.
-* **Appointment Scheduling**: Implement functionality to schedule test drives and service appointments for customers.
-* **Mobile Application Development**: Develop a mobile app to provide on-the-go access to inventory and dealership services.
-* **Loyalty Program**: Introduce a loyalty program to incentivize repeat customers and referrals.
+Java Bistro is continually evolving. Planned enhancements include:
+
+• **Expanded Menu Selection**: Incorporate a broader range of café items and seasonal specialties.
+
+• **Reservation System**: Implement a table reservation feature to enhance customer experience.
+
+• **Feedback Mechanism**: Introduce a feedback mechanism to gather customer insights and improve café operations.
 
 ## Resources
 
@@ -58,6 +59,6 @@ Follow these steps to run the Car Dealership Application:
 
 ## User Stories
 
-[Click](https://github.com/users/izabekovaisha/projects/6) to view the guiding user stories.
+[Click](https://github.com/users/izabekovaisha/projects/7/views/1) to view the guiding user stories.
 
-## With these modifications, the Car Dealership Application offers an enhanced experience for managing vehicle inventory and facilitating sales and leasing transactions efficiently.
+## Java Bistro is designed to empower café owners with the tools they need to efficiently manage their establishments and deliver exceptional dining experiences to their customers.
