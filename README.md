@@ -38,7 +38,7 @@ Follow these steps to run the Car Dealership Application:
 
 ## Demo
 
-
+![Recording2024-05-30154102-ezgif com-speed](https://github.com/izabekovaisha/JavaBistro/assets/166551874/83a7f938-2c86-4663-abb8-e9a8e3f3efa2)
 
 ## Future Work
 
