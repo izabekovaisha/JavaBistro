@@ -261,11 +261,16 @@ public class UserInterface {
         System.out.println("Confirm order? (yes/no)");
         String response = scanner.nextLine();
         if (response.equalsIgnoreCase("yes")) {
+
             Receipt receipt = new Receipt();
+
             receipt.generateReceipt(currentOrder);
             System.out.println("Order confirmed.");
             currentOrder = null;
             displayHomeScreen();
+        } else if
+        (response.equalsIgnoreCase("no")) {
+            cancelOrder();
         } else {
             System.out.println("Order not confirmed. Returning to home screen.");
             displayHomeScreen();
