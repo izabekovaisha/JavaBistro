@@ -116,43 +116,56 @@ public class UserInterface {
 
         System.out.println("Toppings:");
         List<Topping> toppings = new ArrayList<>();
-        toppings.addAll(selectToppings("meat", PremiumTopping.MEATS));
+        toppings.addAll(selectToppings("meat", PremiumTopping.MEATS, true));
 
         System.out.println("Would you like extra meat? (yes/no)");
         boolean extraMeat = scanner.nextLine().equalsIgnoreCase("yes");
 
-        toppings.addAll(selectToppings("cheese", PremiumTopping.CHEESES));
+        toppings.addAll(selectToppings("cheese", PremiumTopping.CHEESES, true));
 
         System.out.println("Would you like extra cheese? (yes/no)");
         boolean extraCheese = scanner.nextLine().equalsIgnoreCase("yes");
 
-        toppings.addAll(selectToppings("regular", RegularTopping.REGULAR_TOPPINGS));
-        toppings.addAll(selectToppings("sauce", RegularTopping.SAUCES));
-        toppings.addAll(selectToppings("sides", RegularTopping.SIDES));
+        toppings.addAll(selectToppings("regular", RegularTopping.REGULAR_TOPPINGS, false));
+        toppings.addAll(selectToppings("sauce", RegularTopping.SAUCES, false));
+        toppings.addAll(selectToppings("sides", RegularTopping.SIDES, false));
 
         System.out.println("Would you like your sandwich toasted? (yes/no)");
         boolean toasted = scanner.nextLine().equalsIgnoreCase("yes");
+
+        for (Topping topping : toppings) {
+            if (topping instanceof PremiumTopping) {
+                PremiumTopping premiumTopping = (PremiumTopping) topping;
+                if (premiumTopping.isMeat()) {
+                    premiumTopping.setExtraMeat(extraMeat);
+                }
+                if (premiumTopping.isCheese()) {
+                    premiumTopping.setExtraCheese(extraCheese);
+                }
+            }
+        }
 
         Sandwich sandwich = new Sandwich(size, bread, toppings, toasted);
         currentOrder.addSandwich(sandwich);
         System.out.println("Sandwich added to your order.");
     }
 
-    private List<Topping> selectToppings(String category, List<String> availableToppings) {
+    private List<Topping> selectToppings(String category, List<String> availableToppings, boolean isPremium) {
         List<Topping> selectedToppings = new ArrayList<>();
-
         System.out.println("Select " + category + " toppings: ");
         for (String topping : availableToppings) {
             System.out.println("> " + topping);
         }
-
         String input = scanner.nextLine();
         String[] toppingsNames = input.split(",");
-
         for (String toppingName : toppingsNames) {
             String trimmedToppingName = toppingName.trim();
             if (availableToppings.contains(trimmedToppingName)) {
-                selectedToppings.add(new RegularTopping(trimmedToppingName));
+                if (isPremium) {
+                    selectedToppings.add(new PremiumTopping(trimmedToppingName));
+                } else {
+                    selectedToppings.add(new RegularTopping(trimmedToppingName));
+                }
             } else {
                 System.out.println("Invalid topping: " + trimmedToppingName);
             }

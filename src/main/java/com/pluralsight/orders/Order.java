@@ -90,20 +90,18 @@ public class Order {
                 System.out.println(sandwich);
             }
         }
-
         if (!drinks.isEmpty()) {
             System.out.println("Drinks: ");
             for (Drink drink : drinks) {
                 System.out.println(drink);
             }
         }
-
         if (!chips.isEmpty()) {
             System.out.println("Chips: ");
             for (Chips chip : chips) {
                 System.out.println(chip);
             }
-        }
+    }
         System.out.println("Total cost: $" + calculateCost());
     }
 
@@ -115,15 +113,5 @@ public class Order {
 
     public void placeOrder() {
         System.out.println("Your order has been successfully placed!");
-    }
-
-    @Override
-    public String toString() {
-        return "Order{" +
-                "customer=" + customer +
-                ", sandwiches=" + sandwiches +
-                ", drinks=" + drinks +
-                ", chips=" + chips +
-                '}';
     }
 }

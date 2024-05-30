@@ -1,7 +1,6 @@
 package com.pluralsight.menu.classes;
 
 import com.pluralsight.toppings.classes.PremiumTopping;
-import com.pluralsight.toppings.classes.RegularTopping;
 import com.pluralsight.toppings.interfaces.Topping;
 
 import java.util.ArrayList;
@@ -85,18 +84,22 @@ public class Sandwich {
         StringBuilder sb = new StringBuilder();
         sb.append("Size: ").append(size).append("\n");
         sb.append("Bread: ").append(bread).append("\n");
-        sb.append("Toasted: ").append(toasted ? "Yes" : "No").append("\n");
+        sb.append("Toasted: ").append(toasted ? "yes" : "no").append("\n");
         sb.append("Toppings: ");
-        if (toppings.isEmpty()) {
-            sb.append("None");
-        } else {
-            for (Topping topping : toppings) {
-                sb.append(topping.getName()).append(" - $").append(topping.getCost(size));
-                if (topping instanceof PremiumTopping) {
-                    PremiumTopping premiumTopping = (PremiumTopping) topping;
-                    sb.append(" | Extra meat: ").append(premiumTopping.isExtraMeat() ? "Yes" : "No");
-                    sb.append(" | Extra cheese: ").append(premiumTopping.isExtraCheese() ? "Yes" : "No");
+        // Use a loop to format the toppings and avoid the trailing pipe
+        for (int i = 0; i < toppings.size(); i++) {
+            Topping topping = toppings.get(i);
+            sb.append(topping.getName()).append(" - $").append(topping.getCost(size));
+            if (topping instanceof PremiumTopping) {
+                PremiumTopping premiumTopping = (PremiumTopping) topping;
+                if (premiumTopping.isExtraMeat()) {
+                    sb.append(" | Extra meat: yes");
                 }
+                if (premiumTopping.isExtraCheese()) {
+                    sb.append(" | Extra cheese: yes");
+                }
+            }
+            if (i < toppings.size() - 1) {
                 sb.append(" | ");
             }
         }
