@@ -5,6 +5,7 @@ import com.pluralsight.menu.classes.Drink;
 import com.pluralsight.menu.classes.Sandwich;
 import com.pluralsight.orders.Customer;
 import com.pluralsight.orders.Order;
+import com.pluralsight.services.Receipt;
 import com.pluralsight.toppings.classes.PremiumTopping;
 import com.pluralsight.toppings.classes.RegularTopping;
 import com.pluralsight.toppings.interfaces.Topping;
@@ -245,7 +246,10 @@ public class UserInterface {
         System.out.println("Checkout:");
         currentOrder.displayOrderDetails();
         System.out.println("Confirm order? (yes/no)");
-        if (scanner.nextLine().equalsIgnoreCase("yes")) {
+        String response = scanner.nextLine();
+        if (response.equalsIgnoreCase("yes")) {
+            Receipt receipt = new Receipt();
+            receipt.generateReceipt(currentOrder);
             System.out.println("Order confirmed.");
             currentOrder = null;
             displayHomeScreen();

@@ -116,4 +116,14 @@ public class Order {
     public void placeOrder() {
         System.out.println("Your order has been successfully placed!");
     }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "customer=" + customer +
+                ", sandwiches=" + sandwiches +
+                ", drinks=" + drinks +
+                ", chips=" + chips +
+                '}';
+    }
 }

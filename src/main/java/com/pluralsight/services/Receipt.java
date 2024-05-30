@@ -21,7 +21,7 @@ public class Receipt {
         if (!folder.exists()) {
             boolean created = folder.mkdirs();
             if (!created) {
-                System.out.println("Failed to create receipts folder.");
+                System.err.println("Failed to create receipts folder.");
                 return;
             }
         }
@@ -30,8 +30,10 @@ public class Receipt {
             writer.write("Order details:\n");
             writer.write(order.toString() + "\n");
             System.out.println("Receipt generated successfully: " + filename);
+            
         } catch (IOException e) {
             System.err.println("Error generating receipt: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 }
