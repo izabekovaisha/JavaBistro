@@ -98,6 +98,7 @@ public class UserInterface {
     private void addSandwich() {
         System.out.println("Add sandwich:");
 
+        // Display available bread types
         System.out.println("Select type of bread:");
         for (String breadType : Sandwich.BREAD_TYPES) {
             System.out.println("> " + breadType);
@@ -105,6 +106,7 @@ public class UserInterface {
         System.out.println("Choose an option: ");
         String bread = scanner.nextLine();
 
+        // Validate the selected bread type
         if (!Sandwich.BREAD_TYPES.contains(bread)) {
             System.out.println("Invalid choice. Please try again.");
             return;
@@ -116,16 +118,17 @@ public class UserInterface {
 
         System.out.println("Toppings:");
         List<Topping> toppings = new ArrayList<>();
+        // Adds premium meat toppings selected by the user to the toppings list
         toppings.addAll(selectToppings("meat", PremiumTopping.MEATS, true));
-
         System.out.println("Would you like extra meat? (yes/no)");
         boolean extraMeat = scanner.nextLine().equalsIgnoreCase("yes");
 
+        // Adds premium cheese toppings selected by the user to the toppings list
         toppings.addAll(selectToppings("cheese", PremiumTopping.CHEESES, true));
-
         System.out.println("Would you like extra cheese? (yes/no)");
         boolean extraCheese = scanner.nextLine().equalsIgnoreCase("yes");
 
+        // Adds regular sauce/sides toppings selected by the user to the toppings list
         toppings.addAll(selectToppings("regular", RegularTopping.REGULAR_TOPPINGS, false));
         toppings.addAll(selectToppings("sauce", RegularTopping.SAUCES, false));
         toppings.addAll(selectToppings("sides", RegularTopping.SIDES, false));
@@ -133,14 +136,16 @@ public class UserInterface {
         System.out.println("Would you like your sandwich toasted? (yes/no)");
         boolean toasted = scanner.nextLine().equalsIgnoreCase("yes");
 
+        // Adjusts premium toppings based on user input regarding extra meat and extra cheese
         for (Topping topping : toppings) {
-            if (topping instanceof PremiumTopping) {
-                PremiumTopping premiumTopping = (PremiumTopping) topping;
+            if (topping instanceof PremiumTopping) { // Checks if the topping is a premium topping
+                PremiumTopping premiumTopping = (PremiumTopping) topping; // Casts(converting) the topping to a PremiumTopping object
+
                 if (premiumTopping.isMeat()) {
-                    premiumTopping.setExtraMeat(extraMeat);
+                    premiumTopping.setExtraMeat(extraMeat); // Sets the value of extraMeat property based on user input
                 }
                 if (premiumTopping.isCheese()) {
-                    premiumTopping.setExtraCheese(extraCheese);
+                    premiumTopping.setExtraCheese(extraCheese); // Sets the value of extraCheese property based on user input
                 }
             }
         }
@@ -151,16 +156,20 @@ public class UserInterface {
     }
 
     private List<Topping> selectToppings(String category, List<String> availableToppings, boolean isPremium) {
-        List<Topping> selectedToppings = new ArrayList<>();
-        System.out.println("Select " + category + " toppings: ");
+        List<Topping> selectedToppings = new ArrayList<>(); // To store selected toppings
+        System.out.println("Select " + category + " toppings: "); // To select toppings of a specific category
+        // Display available toppings for the selected category
         for (String topping : availableToppings) {
             System.out.println("> " + topping);
         }
         String input = scanner.nextLine();
-        String[] toppingsNames = input.split(",");
+        String[] toppingsNames = input.split(","); // To split the user input into individual topping names
         for (String toppingName : toppingsNames) {
-            String trimmedToppingName = toppingName.trim();
-            if (availableToppings.contains(trimmedToppingName)) {
+            String trimmedToppingName = toppingName.trim(); // To trim any leading or trailing whitespace from the topping name
+
+            if (availableToppings.contains(trimmedToppingName)) { // To check if the selected topping is available in the list of available toppings
+                // If the topping is available, create a new instance of the topping object
+                // based on whether it's premium or regular, and add it to the selected toppings list
                 if (isPremium) {
                     selectedToppings.add(new PremiumTopping(trimmedToppingName));
                 } else {
@@ -260,16 +269,17 @@ public class UserInterface {
         currentOrder.displayOrderDetails();
         System.out.println("Confirm order? (yes/no)");
         String response = scanner.nextLine();
-        if (response.equalsIgnoreCase("yes")) {
+        if (response.equalsIgnoreCase("yes")) { // If the user confirms the order
 
             Receipt receipt = new Receipt();
 
             receipt.generateReceipt(currentOrder);
             System.out.println("Order confirmed.");
-            currentOrder = null;
-            displayHomeScreen();
+            currentOrder = null; // Reset current order
+            displayHomeScreen(); // and return to home screen
+
         } else if
-        (response.equalsIgnoreCase("no")) {
+        (response.equalsIgnoreCase("no")) { // if the user declines the order
             cancelOrder();
         } else {
             System.out.println("Order not confirmed. Returning to home screen.");
@@ -278,7 +288,7 @@ public class UserInterface {
     }
 
     private void cancelOrder() {
-        currentOrder = null;
+        currentOrder = null; // Reset current order
         System.out.println("Order canceled. Returning to home screen.");
         displayHomeScreen();
     }

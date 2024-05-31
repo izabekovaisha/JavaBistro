@@ -22,6 +22,7 @@ public class Drink extends MenuItem {
 
     @Override
     public double calculatePrice() {
+        // Determine price based on drink size
         switch (size.toLowerCase()) {
             case "small":
                 return 2.00;
@@ -30,7 +31,7 @@ public class Drink extends MenuItem {
             case "large":
                 return 3.00;
             default:
-                return 0;
+                return 0; // Return 0 if the size is not recognized
         }
     }
 

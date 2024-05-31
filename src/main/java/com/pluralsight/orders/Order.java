@@ -50,6 +50,7 @@ public class Order {
 
     public double calculateCost() {
         double totalCost = 0.0;
+        // Loop through each sandwich/drink/chips item and add its price to the total cost
             for (Sandwich sandwich : sandwiches) {
                 totalCost += sandwich.calculateCost();
         }
@@ -68,6 +69,7 @@ public class Order {
 
         System.out.println("Order details: ");
 
+        // Check if there are any sandwiches/drinks/chips in the order
         if (!sandwiches.isEmpty()) {
             System.out.println("Sandwiches: ");
             for (Sandwich sandwich : sandwiches) {

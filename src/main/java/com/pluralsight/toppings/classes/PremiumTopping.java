@@ -26,11 +26,11 @@ public class PremiumTopping implements Topping {
 
     public boolean isMeat() {
         return MEATS.contains(name);
-    }
+    } // Return true if the topping is a type of meat, false otherwise
 
     public boolean isCheese() {
         return CHEESES.contains(name);
-    }
+    } // Return true if the topping is a type of cheese, false otherwise
 
     public boolean isExtraMeat() {
         return extraMeat;
@@ -51,10 +51,11 @@ public class PremiumTopping implements Topping {
     @Override
     public double getCost(int sandwichSize) {
         double price = 0.0;
+        // Calculate price based on sandwich size and type of topping
         switch (sandwichSize) {
             case 4:
-                price += (isMeat()) ? 1.0 : 0.0;
-                price += (extraMeat) ? 0.50 : 0.0;
+                price += (isMeat()) ? 1.0 : 0.0; // If the topping is a type of meat(isMeat() returns true), a base price of $1.0 is added to the total price, otherwise add $0.0
+                price += (extraMeat) ? 0.50 : 0.0; // If extra meat is added (extraMeat is true), an additional $0.50 is added to the total price, otherwise add $0.0
                 price += (isCheese()) ? 0.75 : 0.0;
                 price += (extraCheese) ? 0.30 : 0.0;
                 break;
@@ -73,7 +74,7 @@ public class PremiumTopping implements Topping {
             default:
                 break;
         }
-        return price;
+        return price; // Return the total price of the topping
     }
     }
 

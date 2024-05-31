@@ -23,5 +23,5 @@ public class RegularTopping implements Topping {
     @Override
     public double getCost(int sandwichSize) {
         return 0.0;
-    }
+    } // Regular toppings have no cost, so return 0.0
 }

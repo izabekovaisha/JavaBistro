@@ -44,7 +44,7 @@ public class Sandwich {
 
     public double calculateCost() {
         double basePrice = 0;
-
+        // Determine base price based on sandwich size
         switch (size) {
             case 4:
                 basePrice = 5.50;
@@ -57,10 +57,11 @@ public class Sandwich {
                 break;
         }
         double toppingsPrice = 0;
+        // Calculate toppings price by iterating through the toppings list
         for (Topping topping : toppings) {
             toppingsPrice += topping.getCost(size);
         }
-        return basePrice + toppingsPrice;
+        return basePrice + toppingsPrice; // Return total cost of the sandwich
     }
 
     @Override
@@ -70,10 +71,11 @@ public class Sandwich {
         sb.append("Bread: ").append(bread).append("\n");
         sb.append("Toasted: ").append(toasted ? "yes" : "no").append("\n");
         sb.append("Toppings: ");
-        // Use a loop to format the toppings and avoid the trailing pipe
+        // Iterate through toppings list to format toppings and their costs
         for (int i = 0; i < toppings.size(); i++) {
             Topping topping = toppings.get(i);
             sb.append(topping.getName()).append(" - $").append(topping.getCost(size));
+            // Check if topping is a premium and add extra meat or cheese if applicable
             if (topping instanceof PremiumTopping) {
                 PremiumTopping premiumTopping = (PremiumTopping) topping;
                 if (premiumTopping.isExtraMeat()) {
@@ -83,6 +85,7 @@ public class Sandwich {
                     sb.append(" | Extra cheese: yes");
                 }
             }
+            // Append the pipe only if it's not the last topping
             if (i < toppings.size() - 1) {
                 sb.append(" | ");
             }

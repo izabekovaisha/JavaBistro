@@ -35,6 +35,7 @@ Follow these steps to run the Car Dealership Application:
 - [IntelliJ IDEA Community Edition 2024.1](https://www.bing.com/ck/a?!&&p=e0b1a0a46e9c6b8aJmltdHM9MTcxNDUyMTYwMCZpZ3VpZD0wZWEzYzk2MC01NjI2LTZmNjEtM2U0Ni1kZDI2NTc3NDZlODgmaW5zaWQ9NTIyMw&ptn=3&ver=2&hsh=3&fclid=0ea3c960-5626-6f61-3e46-dd2657746e88&psq=intellij+idea&u=a1aHR0cHM6Ly93d3cuamV0YnJhaW5zLmNvbS9pZGVhLw&ntb=1)
 - [GitHub](https://github.com/izabekovaisha/FinancialTracker)
 - [Git Bash](https://gitforwindows.org)
+- [Plant Text](https://www.planttext.com/)
 
 ## Demo
 
