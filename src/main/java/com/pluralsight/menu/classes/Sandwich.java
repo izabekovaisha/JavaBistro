@@ -26,32 +26,16 @@ public class Sandwich {
         return size;
     }
 
-    public void setSize(int size) {
-        this.size = size;
-    }
-
     public String getBread() {
         return bread;
-    }
-
-    public void setBread(String bread) {
-        this.bread = bread;
     }
 
     public List<Topping> getToppings() {
         return toppings;
     }
 
-    public void setToppings(List<Topping> toppings) {
-        this.toppings = toppings;
-    }
-
     public boolean isToasted() {
         return toasted;
-    }
-
-    public void setToasted(boolean toasted) {
-        this.toasted = toasted;
     }
 
     public void addTopping(Topping topping) {

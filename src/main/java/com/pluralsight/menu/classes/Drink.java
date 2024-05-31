@@ -16,16 +16,8 @@ public class Drink extends MenuItem {
         return flavor;
     }
 
-    public void setFlavor(String flavor) {
-        this.flavor = flavor;
-    }
-
     public String getSize() {
         return size;
-    }
-
-    public void setSize(String size) {
-        this.size = size;
     }
 
     @Override

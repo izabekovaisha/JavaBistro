@@ -14,10 +14,6 @@ public class Chips extends MenuItem {
         return type;
     }
 
-    public void setType(String type) {
-        this.type = type;
-    }
-
     @Override
     public double calculatePrice() {
         return getPrice();

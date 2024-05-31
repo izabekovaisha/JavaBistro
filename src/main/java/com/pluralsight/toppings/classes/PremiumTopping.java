@@ -36,12 +36,12 @@ public class PremiumTopping implements Topping {
         return extraMeat;
     }
 
-    public void setExtraMeat(boolean extraMeat) {
-        this.extraMeat = extraMeat;
-    }
-
     public boolean isExtraCheese() {
         return extraCheese;
+    }
+
+    public void setExtraMeat(boolean extraMeat) {
+        this.extraMeat = extraMeat;
     }
 
     public void setExtraCheese(boolean extraCheese) {
