@@ -1,0 +1,10 @@
+Order details:
+Customer information:
+Name: Aisha Izabekova
+Order details:
+Drinks:
+Small papaya green tea - $2.0
+Chips:
+Sour cream & onion - $1.5
+Total cost: $3.5
+

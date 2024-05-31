@@ -100,4 +100,32 @@ public class Order {
     public void placeOrder() {
         System.out.println("Your order has been successfully placed!");
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Customer information:\n");
+        sb.append("Name: ").append(customer.getFullName()).append("\n");
+        sb.append("Order details:\n");
+        if (!sandwiches.isEmpty()) {
+            sb.append("Sandwiches:\n");
+            for (Sandwich sandwich : sandwiches) {
+                sb.append(sandwich).append("\n");
+            }
+        }
+        if (!drinks.isEmpty()) {
+            sb.append("Drinks:\n");
+            for (Drink drink : drinks) {
+                sb.append(drink).append("\n");
+            }
+        }
+        if (!chips.isEmpty()) {
+            sb.append("Chips:\n");
+            for (Chips chip : chips) {
+                sb.append(chip).append("\n");
+            }
+        }
+        sb.append("Total cost: $").append(calculateCost()).append("\n");
+        return sb.toString();
+    }
 }

@@ -1,0 +1,16 @@
+Order details:
+Customer information:
+Name: Aisha Izabekova
+Order details:
+Sandwiches:
+Size: 8
+Bread: white
+Toasted: yes
+Toppings: ham - $3.0 | Extra meat: yes | swiss - $1.5 | cheddar - $1.5 | lettuce - $0.0 | pickles - $0.0 | tomatoes - $0.0 | au jus - $0.0
+Price: $13.0
+Drinks:
+Small papaya green tea - $2.0
+Chips:
+Sour cream & onion - $1.5
+Total cost: $16.5
+
