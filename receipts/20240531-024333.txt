@@ -1,6 +1,6 @@
 Order details:
 Customer information:
-Name: Aisha Izabekova
+Name: Kelvin Jefferson
 Order details:
 Drinks:
 Small papaya green tea - $2.0

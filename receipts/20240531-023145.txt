@@ -1,2 +1,0 @@
-Order details:
-com.pluralsight.orders.Order@728938a9
